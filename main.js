@@ -83,7 +83,7 @@ posts.forEach((element) =>{
                     <div class="post__footer">
                         <div class="likes js-likes">
                             <div class="likes__cta">
-                                <a class="like-button  js-like-button" href="#" data-postid="${element.id}">
+                                <a class="like-button  js-like-button" href="#!" data-postid="${element.id}">
                                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                                     <span class="like-button__label">Mi Piace</span>
                                 </a>
@@ -106,13 +106,35 @@ posts.forEach((element) =>{
 
 let buttonLike = document.querySelectorAll(".like-button");
 console.log(buttonLike);
-  
-buttonLike.forEach((miPiace) =>{
+
+let decremento = 0;
+
+buttonLike.forEach((miPiace, index) =>{
     miPiace.addEventListener("click",
         function(){
-            miPiace.classList.toggle("like-button--liked")
+
+            miPiace.classList.toggle("like-button--liked");
+            
+            // salvo in una variabile i likes:
+            let likes = posts[index].likes;
+            console.log(likes);
+
+            let id = index + 1;
+            let counter = document.getElementById(`like-counter-${id}`);
+            console.log(counter);
+
+            counter.innerHTML = likes + 1;
+
+            // condizione per decrementare likes: 
+            if (decremento === 0){
+                decremento++;
+                counter.innerHTML = likes + decremento;
+            }else{
+                decremento--;
+                counter.innerHTML = likes;
+            }
         }
-    )
+    );
 });
 
 
