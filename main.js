@@ -68,7 +68,7 @@ posts.forEach((element) =>{
                     <div class="post__header">
                         <div class="post-meta">                    
                             <div class="post-meta__icon">
-                                <img class="profile-pic" src="${element.author.image}" alt="">                    
+                                <img class="profile-pic" src="${element.author.image}" alt="${element.author.name}">                    
                             </div>
                             <div class="post-meta__data">
                                 <div class="post-meta__author">${element.author.name}</div>
@@ -94,15 +94,18 @@ posts.forEach((element) =>{
                         </div> 
                     </div>            
                 </div>`
-                
+
     // Milestone 2 -
     // Prendendo come riferimento il layout di esempio presente nell’html, stampiamo i post del nostro feed.
     wrapper.innerHTML += item;
 });
 
 
-
-
 // Milestone 3 -
 // Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+
+
+
+
+
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
