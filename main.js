@@ -105,19 +105,15 @@ posts.forEach((element) =>{
 // Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 
 let buttonLike = document.querySelectorAll(".like-button");
-console.log(buttonLike)
-
-for(let i = 0; i < buttonLike.length; i ++){
-    
-    buttonLike[i].addEventListener("click",
-    function(){
-        buttonLike[i].classList.toggle("like-button--liked")
-    }
-);   
-}
+console.log(buttonLike);
   
-
-
+buttonLike.forEach((miPiace) =>{
+    miPiace.addEventListener("click",
+        function(){
+            miPiace.classList.toggle("like-button--liked")
+        }
+    )
+});
 
 
 
